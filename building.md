@@ -10,7 +10,7 @@ The following packages must be installed into your Lazarus setup to build the EP
 | Package | Version | Install Command |
 | ------ | ------ | ------ |
 | HtmlViewer | FrameViewer09 | Online Package Manager |
-| LazMapViewer | 0.2.7.0 | Online Package Manager |
+| LazMapViewer | 0.2.7.0 | Install/Uninstall Package |
 | lazmrumenu | 1.0 | Install/Uninstall Package |
 | TAChartBgra | 1.0 | Install/Uninstall Package |
 | TAChartLazarusPkg | 1.0 | Install/Uninstall Package |
