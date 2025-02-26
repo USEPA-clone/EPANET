@@ -7,7 +7,7 @@
  Authors:      see AUTHORS
  Copyright:    see AUTHORS
  License:      see LICENSE
- Last Updated: 02/16/2025
+ Last Updated: 02/26/2025
 =====================================================================}
 
 unit webmapserver;
@@ -56,7 +56,7 @@ begin
   Engine.CachePath := SysUtils.GetTempDir(False) + 'cache/';
   Engine.CacheOnDisk := true;
   Engine.UseThreads := True;
-  Engine.MapProvider:= 'OpenStreetMap Mapnik';
+  Engine.MapProvider:= 'OpenStreetMap Standard';
   Engine.OnDrawTile := @DoDrawTile;
   Engine.DrawTitleInGuiThread := false;
   Engine.DownloadEngine := TMvDEFpc.Create(self);
@@ -82,7 +82,7 @@ begin
   if Assigned(TileImg) then
     DrawingEngine.DrawCacheItem(X, Y, TileImg)
   else
-    DrawingEngine.FillPixels(X, Y, X + TILE_SIZE, Y + TILE_SIZE, clWhite)
+    DrawingEngine.FillPixels(X, Y, X + TileSize.CX, Y + TileSize.CY, clWhite)
 end;
 
 procedure TMapServer.SetMapProvider(aValue: String);
@@ -127,14 +127,14 @@ var
 begin
   LonLat.Lon := Lon;
   LonLat.Lat := Lat;
-  aPt := Engine.LonLatToScreen(LonLat);
+  aPt := Engine.LatLonToScreen(LonLat);
 end;
 
 procedure TMapServer.ScreenToLonLat(aPt: TPoint; var Lon, Lat: Double);
 var
   LonLat: TRealPoint;
 begin
-  LonLat := Engine.ScreenToLonLat(aPt);
+  LonLat := Engine.ScreenToLatLon(aPt);
   Lon := LonLat.Lon;
   Lat := LonLat.Lat;
 end;

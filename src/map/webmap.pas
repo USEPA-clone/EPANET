@@ -6,7 +6,7 @@
  Authors:      see AUTHORS
  Copyright:    see AUTHORS
  License:      see LICENSE
- Last Updated: 02/16/2025
+ Last Updated: 02/26/2025
 =====================================================================}
 
 // Uses the TMapServer component in the webmapserver unit to
@@ -35,7 +35,7 @@ const
 
   // Map provider names
   MapProviders: array[1..4] of String =
-    ('ArcGIS World Street Map', 'OpenStreetMap Mapnik', 'Virtual Earth Bing',
+    ('ArcGIS World Street Map', 'OpenStreetMap Standard', 'Virtual Earth Bing',
      'Virtual Earth Aerial');
 
 type
